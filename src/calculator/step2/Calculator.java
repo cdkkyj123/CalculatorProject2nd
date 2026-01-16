@@ -1,6 +1,5 @@
 package calculator.step2;
 
-import javax.xml.transform.Result;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,5 +40,10 @@ public class Calculator {
                 }
         }
         results.add(result);
+    }
+
+    // 가장 먼저 저장된 데이터 삭제
+    public static void removeFirstResult() {
+        results.remove(0);
     }
 }
