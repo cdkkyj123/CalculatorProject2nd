@@ -13,40 +13,40 @@ public class App {
 
         while (run) {
 
-            boolean inputnum1 = true;
-            boolean inputnum2 = true;
-            boolean inputop = true;
+            boolean inputNum1 = true;
+            boolean inputNum2 = true;
+            boolean inputOp = true;
             int num1 = 0;
             int num2 = 0;
             char op = 0;
 
-            while (inputnum1) {
+            while (inputNum1) {
                 System.out.print("첫 번째 숫자를 입력하세요: ");
                 if (sc.hasNextInt()) {
                     num1 = sc.nextInt();
-                    inputnum1 = false;
+                    inputNum1 = false;
                 } else {
                     sc.next();
                     System.out.println("양의 정수(0포함)를 입력하세요!");
                 }
             }
 
-            while (inputop) {
+            while (inputOp) {
                 System.out.print("사칙연산 기호를 입력하세요(+, -, x, /): ");
                 op = sc.next().charAt(0);
                 if (op == '+' || op == '-' || op == 'x' || op == '/') {
-                    inputop = false;
+                    inputOp = false;
                 } else {
                     sc.next();
                     System.out.println("잘못된 기호입니다.(+, -, x, /) 중 하나를 입력하세요!");
                 }
             }
 
-            while (inputnum2) {
+            while (inputNum2) {
                 System.out.print("두 번째 숫자를 입력하세요: ");
                 if (sc.hasNextInt()) {
                     num2 = sc.nextInt();
-                    inputnum2 = false;
+                    inputNum2 = false;
                 } else {
                     sc.next();
                     System.out.println("양의 정수(0포함)를 입력하세요!");
