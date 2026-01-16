@@ -24,7 +24,11 @@ public class App {
                 System.out.print("첫 번째 숫자를 입력하세요: ");
                 if (sc.hasNextInt()) {
                     num1 = sc.nextInt();
-                    inputNum1 = false;
+                    if (num1 >= 0) {
+                        inputNum1 = false;
+                    } else {
+                        System.out.println("양의 정수(0포함)를 입력하세요!");
+                    }
                 } else {
                     sc.next();
                     System.out.println("양의 정수(0포함)를 입력하세요!");
@@ -46,7 +50,11 @@ public class App {
                 System.out.print("두 번째 숫자를 입력하세요: ");
                 if (sc.hasNextInt()) {
                     num2 = sc.nextInt();
-                    inputNum2 = false;
+                    if (num2 >= 0) {
+                        inputNum2 = false;
+                    } else {
+                        System.out.println("양의 정수(0포함)를 입력하세요!");
+                    }
                 } else {
                     sc.next();
                     System.out.println("양의 정수(0포함)를 입력하세요!");
@@ -69,6 +77,17 @@ public class App {
         String confirmView = sc.next();
         if (confirmView.equals("y")) {
             System.out.println("저장된 결과: " + Calculator.getResult());
+        } else {
+            System.out.println("조회가 취소되었습니다.");
+        }
+
+        System.out.println("가장 먼저 저장된 결과를 제거하시겠습니까?");
+        System.out.println("예: y, 아니오: any key");
+        String confirmRemove = sc.next();
+        if (confirmRemove.equals("y")) {
+            Calculator.removeFirstResult();
+            System.out.println("제거가 완료되었습니다.");
+            System.out.println("남은 데이터는: " + Calculator.getResult() + "입니다.");
         }
     }
 }
