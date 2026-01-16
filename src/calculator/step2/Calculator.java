@@ -5,10 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    static List<Integer> results = new ArrayList<>();
+    private static  List<Integer> results = new ArrayList<>();
 
-    public static String getResult() {
-        return results.toString();
+    public static List<Integer> getResult() {
+        return new ArrayList<>(results);
+    }
+
+    public static void setResults(List<Integer> results) {
+        Calculator.results = results;
     }
 
     public void calculate(int num1, int num2, char op) {
