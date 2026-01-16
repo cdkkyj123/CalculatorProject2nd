@@ -11,14 +11,45 @@ public class App {
 
         while (run) {
 
-            System.out.print("첫 번째 숫자를 입력하세요: ");
-            int num1 = sc.nextInt();
+            boolean inputnum1 = true;
+            boolean inputnum2 = true;
+            boolean inputop = true;
+            int num1 = 0;
+            int num2 = 0;
+            char op = 0;
 
-            System.out.print("사칙연산 기호를 입력하세요(+, -, x, /): ");
-            char op = sc.next().charAt(0);
+            while (inputnum1) {
+                System.out.print("첫 번째 숫자를 입력하세요: ");
+                if (sc.hasNextInt()) {
+                    num1 = sc.nextInt();
+                    inputnum1 = false;
+                } else {
+                    sc.next();
+                    System.out.println("양의 정수(0포함)를 입력하세요!");
+                }
+            }
 
-            System.out.print("두 번째 숫자를 입력하세요: ");
-            int num2 = sc.nextInt();
+            while (inputop) {
+                System.out.print("사칙연산 기호를 입력하세요(+, -, x, /): ");
+                op = sc.next().charAt(0);
+                if (op == '+' || op == '-' || op == 'x' || op == '/') {
+                    inputop = false;
+                } else {
+                    sc.next();
+                    System.out.println("잘못된 기호입니다.(+, -, x, /) 중 하나를 입력하세요!");
+                }
+            }
+
+            while (inputnum2) {
+                System.out.print("두 번째 숫자를 입력하세요: ");
+                if (sc.hasNextInt()) {
+                    num2 = sc.nextInt();
+                    inputnum2 = false;
+                } else {
+                    sc.next();
+                    System.out.println("양의 정수(0포함)를 입력하세요!");
+                }
+            }
 
             int result = 0;
 
@@ -42,11 +73,11 @@ public class App {
                     } else {
                         result = num1 / num2;
                         System.out.println("결과: " + result);
-                    } break;
+                    }
             }
             sc.nextLine();
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
-            String quit = sc.nextLine();
+            String quit = sc.next();
             if (!Objects.equals(quit, "exit")) {
                 continue;
             } else {
