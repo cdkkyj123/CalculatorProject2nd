@@ -6,12 +6,11 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Calculator cal = new Calculator();
 
         boolean run = true;
 
         while (run) {
-
-            Calculator cal = new Calculator();
 
             boolean inputnum1 = true;
             boolean inputnum2 = true;

@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
+    List<Integer> results = new ArrayList<>();
+
     public void calculate(int num1, int num2, char op) {
-        int result;
+        int result = 0;
 
         switch (op) {
             case '+':
@@ -30,7 +32,6 @@ public class Calculator {
                     System.out.println("결과: " + result);
                 }
         }
+        results.add(result);
     }
-
-    List<Result> results = new ArrayList<> ();
 }
