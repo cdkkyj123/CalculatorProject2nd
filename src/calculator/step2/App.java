@@ -1,5 +1,6 @@
 package calculator.step2;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -62,6 +63,12 @@ public class App {
                 System.out.println("계산을 종료합니다.");
                 run = false;
             }
+        }
+        System.out.println("저장된 결과를 조회하시겠습니까?");
+        System.out.println("예: y, 아니오: any key");
+        String confirmView = sc.next();
+        if (confirmView.equals("y")) {
+            System.out.println("저장된 결과: " + Calculator.getResult());
         }
     }
 }
